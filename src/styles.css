@@ -1,0 +1,490 @@
+/* ===== GLOBAL STYLES ===== */
+:root {
+  --blue: #6ca5ff;
+  --gray-bg: #f2f2f2;
+  --gray-stroke: #d9d9d9;
+  --gray-text: #6d6d6d;
+}
+
+/* ===== APP STYLES ===== */
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== HEADER STYLES ===== */
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  background: #fff;
+}
+
+.Header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  font-style: italic;
+  color: #5a8df6;
+}
+
+.Icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Icon img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 768px) {
+  .Header {
+    padding: 20px 150px 0px 150px;
+  }
+}
+
+/* ===== SEARCHBAR STYLES ===== */
+.SearchBar {
+  margin: 0px 0px;
+}
+
+.SearchBar__input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #6ca5ff;
+  border-radius: 50px;
+  font-size: 14px;
+  font-family: 'Pretendard', sans-serif;
+  color: #111;
+  box-sizing: border-box;
+}
+
+.SearchBar__input::placeholder {
+  color: #8d8d8d;
+}
+
+/* ===== FILTER TABS STYLES ===== */
+.FilterTabs {
+  display: flex;
+  gap: 5px;
+  margin: 20px 0px 20px 0px;
+  justify-content: flex-start;
+}
+
+.tab {
+  width: 60px;
+  height: 30px;
+  border-radius: 1000px;
+  border: none;
+  background: hsl(0, 0%, 95%);
+  color: #6d6d6d;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fffcfc;
+}
+
+.tab:hover {
+  filter: brightness(0.98);
+}
+
+.tab:active {
+  transform: translateY(1px);
+}
+
+/* ===== MAP VIEW STYLES ===== */
+.MapView {
+  display: block;
+  padding: 0 20px;
+}
+
+.Map {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .MapView {
+    padding: 0px 150px 0px 150px;
+  }
+  .StoreList {
+    gap: 50px;
+  }
+}
+
+/* ===== MAP STORE STYLES ===== */
+.MapStore {
+  height: 130px;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  margin: 0px;
+  background: hsl(0, 0%, 95%);
+  border-radius: 15px;
+  align-items: flex-start;
+}
+
+.store-icon {
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  background: #d9d9d9;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.MapStore_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.MapStore__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px 10px 0px;
+}
+
+.store-name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.store__rating {
+  display: flex;
+  gap: 5px;
+}
+
+.store__score {
+  margin: 0px;
+  font-size: 17px;
+}
+
+.star-icon {
+  width: 17px;
+  height: 17px;
+}
+
+.store-meta {
+  margin: 0px 0px 5px 0px;
+  color: #8a8a8a;
+  font-size: 0.875rem;
+}
+
+.store-meta > p {
+  margin: 0px;
+}
+
+.coupon-btn {
+  padding: 12px 20px;
+  background: #6ca5ff;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+
+.coupon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .MapStore {
+    padding: 30px;
+  }
+
+  .store-name {
+    font-size: 1.5rem;
+  }
+
+  .store-meta {
+    font-size: 1rem;
+  }
+
+  .coupon-btn {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .store-name {
+    font-size: 1.75rem;
+  }
+
+  .store-meta {
+    font-size: 1.125rem;
+  }
+
+  .coupon-btn {
+    font-size: 1.125rem;
+  }
+}
+
+/* ===== STORE VIEW STYLES ===== */
+.StoreView {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.StoreList {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.StoreList > .Store {
+  width: 100%;
+}
+
+.Ai {
+  margin: 0px 0px 14px 0px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.fixedMent {
+  margin: 0px 0px 10px 0px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .StoreView {
+    padding: 0px 150px 0px 150px;
+  }
+  .StoreList {
+    gap: 50px;
+  }
+}
+
+/* ===== STORE STYLES ===== */
+.Store {
+  margin: 0;
+  width: 100%;
+  align-items: center;
+  border-radius: 12px;
+  gap: 12px;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.Store:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Store__image {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+.Store__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.Store__name {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+.Store__rating {
+  display: flex;
+  gap: 3px;
+}
+
+.Store__star-icon {
+  width: 13px;
+  height: 13px;
+}
+
+.Store__score {
+  margin: 0px;
+  font-size: 12px;
+}
+
+.Store__meta {
+  margin-left: 4px;
+  margin-top: 2px;
+  font-size: 10px;
+  color: #8a8a8a;
+}
+
+/* ===== STORE DETAIL STYLES ===== */
+.StoreDetail {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.store-main-wrapper {
+  position: relative; /* absolute 위치 기준 */
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  margin-right: -20px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.store-main-wrapper > button {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0); /* 반투명 배경 */
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.store-main-wrapper > button > img {
+  width: 15px;
+  height: auto;
+}
+
+.store-main-image {
+  width: calc(100% + 40px); /* 좌우 20px씩 총 40px 확장 */
+  margin-left: -20px;
+  margin-right: -20px;
+  height: 200px; /* 원하는 만큼 잘라낼 영역의 높이 */
+  object-fit: cover;
+  overflow: hidden;
+  display: block;
+}
+
+.store-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.store-detail-header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.store-detail-name {
+  margin: 0px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.store-detail-info {
+  margin: 0px;
+  font-size: 15px;
+  color: #bababa;
+  border: #111;
+}
+
+.store-detail__rating {
+  display: flex;
+  gap: 5px;
+  margin: 0px;
+}
+.store-detail__star-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.store-detail__score {
+  margin-block: 0px;
+  font-size: 22px;
+  height: 22px;
+}
+
+.store-coupon {
+  height: 10px;
+  background-color: #6ca5ff;
+  border-radius: 15px;
+  margin: 0px 0px 15px 0px;
+  padding: 30px;
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.store-coupon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.store-info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 16px;
+  border-top: 0.5px solid #d9d9d9;
+}
+
+.store-info > p {
+  margin: 0px;
+  font-size: 15px;
+}
+
+.menu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-name {
+  margin: 0px 0px 0px 5px;
+  font-size: 15px;
+}
+
+.menu-header {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: 500;
+}
+.menu-list {
+  display: flex;
+  gap: 10px;
+}
+
+.menu-info {
+  flex: 1; /* 메뉴 항목들이 같은 너비 */
+}
+
+.menu-image {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 항상 1:1 비율 유지 */
+  object-fit: cover; /* 넘치는 부분 잘라서 채우기 */
+  border-radius: 12px;
+  display: block;
+}
